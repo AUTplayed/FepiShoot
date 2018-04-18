@@ -24,8 +24,10 @@ public class SpawnManager {
     private static SpawnManager instance;
 
     public void update() {
-        spawntime -= Gdx.graphics.getDeltaTime();
-        spawnEnemies();
+        if(!GameVar.paused){
+            spawntime -= Gdx.graphics.getDeltaTime();
+            spawnEnemies();
+        }
     }
 
     private void spawnEnemies() {
